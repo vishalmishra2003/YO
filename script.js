@@ -1,4 +1,6 @@
 const noBtn = document.getElementById('noButton');
+const yesBtn = docuemnt.getElementById('yesButton');
+let showText = document.getElementById('thankYouMessage');
 
 function moveButton() {
     const noButton = document.getElementById("noButton");
@@ -10,8 +12,11 @@ function moveButton() {
     noButton.style.top = randomY + 'px';
 }
 
-noBtn.addEventListener('mouseenter', moveButton);
-noBtn.addEventListener('touchstart', moveButton); // For mobile touch devices
+function showThanks(){
+	showText.innerHTML = `Thank you for loving me Ammu 💖💖!`
+}
 
-// Optionally, adjust on resize to ensure the button remains within the viewport
+noBtn.addEventListener('mouseenter', moveButton);
+noBtn.addEventListener('touchstart', moveButton);
+yesBtn.addEventListener('click',showThanks);
 window.addEventListener('resize', moveButton);
